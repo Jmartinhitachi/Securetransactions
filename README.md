@@ -2,7 +2,6 @@
 
 ![Advanced Research](./advancedresearch.png)
 
-# Hitachi Vantara 
 > Create Outcomes that Matter
 
 ## Project Goal
