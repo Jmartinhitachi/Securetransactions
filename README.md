@@ -21,3 +21,5 @@ watch changes using grunt `grunt watch` this will automatically update verison n
 compile typescript and copy over assets by using `webpack`
 
 For the purpose of testing the files are compiled and accessible from `dist\index.html` (open dev tools and explore results).
+
+documentation is available at `.documentation`
