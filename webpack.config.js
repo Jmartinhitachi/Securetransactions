@@ -32,15 +32,6 @@ module.exports = {
         ]
     },
 
-    // When importing a module whose path matches one of the following, just
-    // assume a corresponding global variable exists and use that instead.
-    // This is important because it allows us to avoid bundling all of our
-    // dependencies, which allows browsers to cache those libraries between builds.
-   /** externals: {
-      "babylonjs": "BABYLON"
-    },**/
-
-
       plugins: [
         new HtmlWebpackPlugin({
             "title":"Ledger-Alpha "+pjson.version,
@@ -51,9 +42,10 @@ module.exports = {
         new TypedocWebpackPlugin({
             name: "Ledger",
             mode: 'file',
+            theme: 'default',
             includeDeclarations: false,
             ignoreCompilerErrors: true,
-            out: '../.documentation'
+            out: '../docs'
         }, ['./source'])
         ]
 };
