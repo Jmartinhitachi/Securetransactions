@@ -73,33 +73,56 @@ export class BlockChain {
     }
 }
 
+/**
+ * for testing purpose we provide a key like so
+ */
 const key = "abcdefghijklmnopqrstuvwx"
+
+/**
+ * create a chain to hold our blocks, passing in the key and the encryption protocol
+ */
 const chain = new BlockChain(key, 'sha256', 'c4ff3');
+
+/**
+ * create some blocks, these are addedto the chain
+ */
 const blockOne = chain.creatBlock("another block");
 const blockTwo = chain.creatBlock("YET ANOTHER BLOCK!");
 
-//this will be valid
-console.log("valid?", chain.validateBlock(blockTwo, blockOne));
+/**
+ * Check the validity of the block by using validate block (order is important)
+ */
+const isValid  = chain.validateBlock(blockTwo, blockOne)
+const isValidTwo = chain.validateBlock(blockOne, blockTwo)
+console.log("valid?", isValid);
 
-//this will not because the blocks are the wrong way round
-console.log("valid? 2", chain.validateBlock(blockOne, blockTwo));
+// this will not because the blocks are the wrong way round
+console.log("valid? 2", isValidTwo);
 
-//we can get data from the blocks
-console.log(blockOne.getData(key, "jayusername@domain"));
+// we can get data from the blocks
+
+/**
+ * Abstract data from the block, can only be done if the key is known
+ */
+const data = blockOne.getData(key, "jayusername@domain");
+console.log(data);
 console.log(blockTwo.getData(key, "jayusername@domain"));
 
-//and validate the chain as a whole
-console.log('validating chain: ', chain.validate());
+/**
+ *  and validate the chain as a whole
+ */
+const isChainValid = chain.validate();
+console.log('validating chain: ', isChainValid);
 
-console.log('adding some bogus hocus pocus')
+console.log('adding some bogus hocus pocus for integrity testing')
 
-//if we try to inject a hash
+// if we try to inject a hash
 let block = chain.creatBlock("amazing");
 block.hash = "megamegamegalolz";
 
-//and then create a new block
+// and then create a new block
 chain.creatBlock("this block is built on a mdified block");
 
 
-//it will be invalid
+// it will be invalid
 console.log('is the chain valid, ', chain.validate());
