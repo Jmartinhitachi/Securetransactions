@@ -91,6 +91,10 @@
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#blockone" class="tsd-kind-icon">block<wbr>One</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#blocktwo" class="tsd-kind-icon">block<wbr>Two</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#chain" class="tsd-kind-icon">chain</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#ischainvalid" class="tsd-kind-icon">is<wbr>Chain<wbr>Valid</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#isvalidtwo" class="tsd-kind-icon">is<wbr>Valid<wbr>Two</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#key" class="tsd-kind-icon">key</a></li>
 							</ul>
 						</section>
@@ -105,7 +109,7 @@
 					<div class="tsd-signature tsd-kind-icon">block<span class="tsd-signature-symbol">:</span> <a href="classes/block.html" class="tsd-signature-type">Block</a><span class="tsd-signature-symbol"> =&nbsp;chain.creatBlock(&quot;amazing&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in index.ts:97</li>
+							<li>Defined in index.ts:120</li>
 						</ul>
 					</aside>
 				</section>
@@ -115,9 +119,14 @@
 					<div class="tsd-signature tsd-kind-icon">block<wbr>One<span class="tsd-signature-symbol">:</span> <a href="classes/block.html" class="tsd-signature-type">Block</a><span class="tsd-signature-symbol"> =&nbsp;chain.creatBlock(&quot;another block&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in index.ts:78</li>
+							<li>Defined in index.ts:89</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>create some blocks, these are addedto the chain</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
 					<a name="blocktwo" class="tsd-anchor"></a>
@@ -125,7 +134,7 @@
 					<div class="tsd-signature tsd-kind-icon">block<wbr>Two<span class="tsd-signature-symbol">:</span> <a href="classes/block.html" class="tsd-signature-type">Block</a><span class="tsd-signature-symbol"> =&nbsp;chain.creatBlock(&quot;YET ANOTHER BLOCK!&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in index.ts:79</li>
+							<li>Defined in index.ts:90</li>
 						</ul>
 					</aside>
 				</section>
@@ -135,7 +144,67 @@
 					<div class="tsd-signature tsd-kind-icon">chain<span class="tsd-signature-symbol">:</span> <a href="classes/blockchain.html" class="tsd-signature-type">BlockChain</a><span class="tsd-signature-symbol"> =&nbsp;new BlockChain(key, &#x27;sha256&#x27;, &#x27;c4ff3&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in index.ts:77</li>
+							<li>Defined in index.ts:84</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>create a chain to hold our blocks, passing in the key and the encryption protocol</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;blockOne.getData(key, &quot;jayusername@domain&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.ts:107</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Abstract data from the block, can only be done if the key is known</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="ischainvalid" class="tsd-anchor"></a>
+					<h3>is<wbr>Chain<wbr>Valid</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Chain<wbr>Valid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;chain.validate()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.ts:114</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p> and validate the chain as a whole</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="isvalid" class="tsd-anchor"></a>
+					<h3>is<wbr>Valid</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Valid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;chain.validateBlock(blockTwo, blockOne)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.ts:95</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Check the validity of the block by using validate block (order is important)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="isvalidtwo" class="tsd-anchor"></a>
+					<h3>is<wbr>Valid<wbr>Two</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Valid<wbr>Two<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;chain.validateBlock(blockOne, blockTwo)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.ts:96</li>
 						</ul>
 					</aside>
 				</section>
@@ -145,9 +214,14 @@
 					<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"abcdefghijklmnopqrstuvwx"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;abcdefghijklmnopqrstuvwx&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in index.ts:76</li>
+							<li>Defined in index.ts:79</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>for testing purpose we provide a key like so</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -184,6 +258,18 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#chain" class="tsd-kind-icon">chain</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#data" class="tsd-kind-icon">data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#ischainvalid" class="tsd-kind-icon">is<wbr>Chain<wbr>Valid</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#isvalidtwo" class="tsd-kind-icon">is<wbr>Valid<wbr>Two</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#key" class="tsd-kind-icon">key</a>
