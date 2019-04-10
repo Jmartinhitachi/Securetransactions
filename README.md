@@ -2,7 +2,6 @@
 
 ![Advanced Research](./advancedresearch.png)
 
-> Create Outcomes that Matter
 
 ## Project Goal
 To explore the integrity of communications using blockchains.
