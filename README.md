@@ -10,6 +10,14 @@ Blockchain technology can be used for more then just digital currency. It can be
 
 This repo take a look at the concept of storing and recieving data and insuring its integrity via a block chain.
 
+This proof of concept has use cases in where non-authorative/authorative P2P networks are being used. Whereby all connected parties authorise each others movements via ledger checking.
+
+In games like EliteDangerous where one person 'hosts' the instance and everyone connects to him, we are ensuring that the host cannot cheat by ledgering his actions against everyone elses.
+
+This is a proof of concept based on [this paper](https://www.researchgate.net/publication/318131748_An_Overview_of_Blockchain_Technology_Architecture_Consensus_and_Future_Trends) 
+
+
+
 ## Usage
 
 In the command line
